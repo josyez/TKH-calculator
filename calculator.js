@@ -1,7 +1,7 @@
 // create function for each operation: add, subtract, multiply and divide
 // helper functions
 
-operator = operator.toLowerCase()
+//operator = operator.toLowerCase()
 
 function add(num1, num2){
 return num1 + num2
@@ -24,7 +24,7 @@ function divide (num1, num2){
 //create a function named operate that takes in 3 parameters: 
 //2 numbers and the operation to be performed 
 
-function operate(num1, num2, operator){
+function operator(num1, num2, operator){
     if(operator === 'add'){
     return add(num1, num2)
 }
@@ -45,3 +45,39 @@ else {
 //console.log(operate(1,2, 'subtract'))
 //console.log(operate(1,2, 'multiply'))
 //console.log(operate(1,2, 'divide'))
+
+//variable to hold value from form inputs
+let num1 = 0
+let num2 = 0
+let operatorButtonVal = ''
+// function that runs when the equal button is clicked using onclick
+
+function equalsClicked(){
+    //saving the number value of the first input to num1
+ num1 = document.querySelector('#num1').value
+
+ //pareIn changes num1 data type to number
+ num1 = parseInt(num1)
+
+ operatorButtonVal = document.querySelector('#operator').value
+ console.log(operatorButtonVal)
+
+// next steps
+// create variable for num2
+
+ num2 = document.querySelector('#num2').value
+ num2 = parseInt(num2)
+ operatorButtonVal = document.querySelector('#operator').value
+
+operatorButtonVal = document.querySelector('#operator').value
+
+
+const results = document.getElementById('result-num')
+
+const numResult = operator(num1, num2, operatorButtonVal)
+
+console.log(num1, num2, operatorButtonVal);
+
+results.textContent = numResult
+
+}
